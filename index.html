@@ -262,7 +262,8 @@
           </div>
 
           <div class="portfolio-cards">
-            <article class="portfolio-card reveal">
+            <article class="portfolio-card reveal"
+              data-images="img/portfolio-clinica-1.jpg|img/portfolio-clinica-2.jpg|img/portfolio-clinica-3.jpg|img/portfolio-clinica-4.jpg|img/portfolio-clinica-5.jpg|img/portfolio-clinica-6.jpg">
               <span class="portfolio-card-tag">Clínica Médica</span>
               <div class="laptop-mockup">
                 <div class="laptop-screen">
@@ -290,7 +291,8 @@
               <div class="portfolio-tags"><span>Agendamento</span><span>Responsivo</span><span>SEO</span></div>
             </article>
 
-            <article class="portfolio-card reveal">
+            <article class="portfolio-card reveal"
+              data-images="img/portfolio-fisio-1.jpg|img/portfolio-fisio-2.jpg|img/portfolio-fisio-3.jpg|img/portfolio-fisio-4.jpg|img/portfolio-fisio-5.jpg|img/portfolio-fisio-6.jpg">
               <span class="portfolio-card-tag">Fisioterapia</span>
               <div class="laptop-mockup">
                 <div class="laptop-screen">
@@ -318,7 +320,8 @@
               <div class="portfolio-tags"><span>Booking</span><span>Galeria</span><span>Depoimentos</span></div>
             </article>
 
-            <article class="portfolio-card reveal">
+            <article class="portfolio-card reveal"
+              data-images="img/portfolio-adv-1.jpg|img/portfolio-adv-2.jpg|img/portfolio-adv-3.jpg|img/portfolio-adv-4.jpg|img/portfolio-adv-5.jpg|img/portfolio-adv-6.jpg">
               <span class="portfolio-card-tag">Advocacia</span>
               <div class="laptop-mockup">
                 <div class="laptop-screen">
@@ -426,6 +429,24 @@
         </div>
       </section>
     </main>
+
+    <!-- Modal Carrossel Portfólio -->
+    <div class="portfolio-modal" aria-hidden="true">
+      <div class="portfolio-modal-backdrop"></div>
+      <div class="portfolio-modal-dialog" role="dialog" aria-modal="true" aria-label="Galeria de projeto">
+        <button class="portfolio-modal-close" aria-label="Fechar galeria">&times;</button>
+        <div class="portfolio-modal-content">
+          <div class="portfolio-main-image-wrapper">
+            <button class="portfolio-arrow portfolio-arrow-left" aria-label="Imagem anterior">&#10094;</button>
+            <img src="" alt="Prévia do projeto" class="portfolio-main-image">
+            <button class="portfolio-arrow portfolio-arrow-right" aria-label="Próxima imagem">&#10095;</button>
+          </div>
+          <div class="portfolio-thumbs-wrapper">
+            <div class="portfolio-thumbs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container">

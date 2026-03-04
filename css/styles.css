@@ -91,8 +91,8 @@ body {
 
 /* ✅ NOVO: imagem do logo */
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   display: block;
 }
@@ -1133,6 +1133,183 @@ body {
   margin: 0;
   font-size: 0.85rem;
   color: #64748b;
+}
+
+/* ----- Modal Portfólio / Carrossel ----- */
+.no-scroll {
+  overflow: hidden;
+}
+
+.portfolio-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.portfolio-modal.is-open {
+  display: flex;
+}
+
+.portfolio-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 96vw);
+  max-height: 90vh;
+  background: #020617;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+  padding: 2.5rem 1.75rem 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.portfolio-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s, border-color 0.2s;
+  z-index: 2;
+}
+
+.portfolio-modal-close:hover {
+  background: rgba(30, 64, 175, 0.9);
+  border-color: #60a5fa;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
+  transform: translateY(-1px);
+}
+
+.portfolio-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.portfolio-main-image-wrapper {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #1d4ed8 0%, #0f172a 45%, #020617 100%);
+}
+
+.portfolio-main-image {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 52vh, 420px);
+  object-fit: cover;
+}
+
+.portfolio-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.portfolio-arrow-left {
+  left: 0.75rem;
+}
+
+.portfolio-arrow-right {
+  right: 0.75rem;
+}
+
+.portfolio-arrow:hover {
+  background: rgba(37, 99, 235, 0.95);
+  transform: translateY(-50%) scale(1.03);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.7);
+}
+
+.portfolio-thumbs-wrapper {
+  margin-top: 0.1rem;
+}
+
+.portfolio-thumbs {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.35rem 0.2rem 0.1rem;
+}
+
+.portfolio-thumb {
+  flex: 0 0 auto;
+  width: 86px;
+  height: 64px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+  opacity: 0.8;
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.6) 100%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.portfolio-thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.portfolio-thumb.is-active {
+  border-color: #38bdf8;
+  opacity: 1;
+}
+
+.portfolio-thumb.is-active::after {
+  opacity: 1;
 }
 
 /* ----- Responsivo ----- */
