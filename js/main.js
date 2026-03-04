@@ -52,7 +52,6 @@
   if (statNum) {
     var target = parseInt(statNum.getAttribute('data-target'), 10);
     var duration = 2000;
-    var start = 0;
     var startTime = null;
 
     function easeOutQuart(t) {

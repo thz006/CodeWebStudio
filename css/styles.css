@@ -89,14 +89,24 @@ body {
   letter-spacing: -0.03em;
 }
 
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
-  border-radius: 8px;
+/* ✅ NOVO: imagem do logo */
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
 }
 
 .logo span { color: var(--accent); }
+
+/* ❌ antigo ícone em CSS (desativado) */
+.logo-icon { display: none; }
 
 .nav {
   display: flex;
@@ -687,18 +697,14 @@ body {
 
 .section-label-light { color: var(--gold); }
 
-.section-title-light {
-  color: #fff;
-}
+.section-title-light { color: #fff; }
 
 .section-title-light .text-gold {
   color: var(--gold);
   font-weight: 800;
 }
 
-.section-desc-light {
-  color: #94a3b8;
-}
+.section-desc-light { color: #94a3b8; }
 
 .portfolio-cards {
   display: grid;
@@ -1090,10 +1096,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer .logo {
-  color: #fff;
-}
-
+.footer .logo { color: #fff; }
 .footer .logo span { color: var(--accent); }
 
 .footer-brand p {
