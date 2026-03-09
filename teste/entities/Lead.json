@@ -1,0 +1,48 @@
+{
+    "name": "Lead",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Nome do lead"
+      },
+      "email": {
+        "type": "string",
+        "description": "Email do lead"
+      },
+      "phone": {
+        "type": "string",
+        "description": "Telefone do lead"
+      },
+      "service_interest": {
+        "type": "string",
+        "enum": [
+          "landing_page",
+          "site_institucional",
+          "ecommerce",
+          "redesign"
+        ],
+        "description": "Servi\u00e7o de interesse"
+      },
+      "message": {
+        "type": "string",
+        "description": "Mensagem do lead"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "novo",
+          "em_contato",
+          "negociando",
+          "fechado",
+          "perdido"
+        ],
+        "default": "novo",
+        "description": "Status do lead"
+      }
+    },
+    "required": [
+      "name",
+      "email"
+    ]
+  }
