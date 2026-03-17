@@ -4,6 +4,8 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const revealItems = document.querySelectorAll(".reveal");
 const cursorGlow = document.querySelector(".cursor-glow");
 const tiltCard = document.querySelector(".tilt-card");
+const footerContactToggle = document.querySelector(".footer-contact-toggle");
+const footerContactPanel = document.querySelector(".footer-contact-panel");
 
 if (menuToggle && header) {
   menuToggle.addEventListener("click", () => {
@@ -60,3 +62,25 @@ const revealObserver = new IntersectionObserver(
 revealItems.forEach((item) => {
   revealObserver.observe(item);
 });
+
+if (footerContactToggle && footerContactPanel) {
+  footerContactToggle.addEventListener("click", () => {
+    const isOpen = footerContactToggle.getAttribute("aria-expanded") === "true";
+    footerContactToggle.setAttribute("aria-expanded", String(!isOpen));
+
+    if (isOpen) {
+      footerContactPanel.classList.remove("is-open");
+      window.setTimeout(() => {
+        if (footerContactToggle.getAttribute("aria-expanded") === "false") {
+          footerContactPanel.hidden = true;
+        }
+      }, 350);
+      return;
+    }
+
+    footerContactPanel.hidden = false;
+    requestAnimationFrame(() => {
+      footerContactPanel.classList.add("is-open");
+    });
+  });
+}
